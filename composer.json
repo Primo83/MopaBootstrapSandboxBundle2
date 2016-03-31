@@ -1,5 +1,5 @@
 {
-    "name": "mopa/bootstrap-sandbox-bundle",
+    "name": "mopa/bootstrap-sandbox-bundle2",
     "type": "symfony-bundle",
     "description": "Seperate live docs from code",
     "keywords": ["form", "sandbox", "extra form", "bootstrap", "bootstrap form", "template"],
@@ -31,7 +31,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.0.x-dev"
+            "dev-maste": "2.2.1-dev"
         }
     }
 }
