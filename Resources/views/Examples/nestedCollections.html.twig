@@ -1,0 +1,58 @@
+{% extends "MopaBootstrapSandboxBundle::layout.html.twig" %}
+{% from 'MopaBootstrapBundle::flash.html.twig' import session_flash %}
+{% form_theme form _self %}
+
+{% block headline %}Collection Forms{% endblock headline %}
+
+{% block content %}
+<div class="col-lg-6">
+    <form class="form-horizontal" id="your_form_name" method="post">
+        {{ form_widget(form) }}
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="reset" class="btn">Cancel</button>
+        </div>
+    </form>
+</div>
+<div class="col-lg-6">
+    <div class="row">
+        <div class="col-sd-12">
+             <h3>Simple Parent Collection</h3>
+
+                  <pre class="prettyprint">
+
+        $builder
+            ->add(
+                'myCollection',
+                'collection',
+                [
+                    'type' => new ExampleNestedCollectionChildType(),
+                    'allow_add' => true,
+                    'label' => 'parent collection'
+                ]
+
+            );
+                 </pre>
+        </div>
+        <div class="col-sd-12">
+             <h4>And its Childform</h4>
+
+              <pre class="prettyprint">
+
+        $builder
+            ->add(
+                'myCollectionChild',
+                'collection',
+                [
+                    'type' => 'text',
+                    'allow_add' => 'true',
+                    'label' => 'smth'
+                ]
+            );
+             </pre>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% set showTemplate = _self %}{% set showForm = formType %}
